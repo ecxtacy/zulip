@@ -248,7 +248,7 @@ export function submit_api_request(
         },
         error(xhr, error_type, xhn) {
             ui_report.error(failure_msg_html, xhr, $("#dialog_error"));
-            hide_dialog_spinner();
+            loading.hide_spinner($("#dialog_widget_modal"));
             if (error_continuation !== undefined) {
                 error_continuation(xhr, error_type, xhn);
             }

@@ -191,7 +191,7 @@ function show_add_default_streams_modal() {
                         xhr,
                         $("#dialog_error"),
                     );
-                    dialog_widget.hide_dialog_spinner();
+                    loading.hide_spinner($("#dialog_widget_modal"));
                 },
             });
         }

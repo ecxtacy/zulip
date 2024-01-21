@@ -13,6 +13,7 @@ import * as dialog_widget from "./dialog_widget";
 import * as dropdown_widget from "./dropdown_widget";
 import * as hash_util from "./hash_util";
 import {$t, $t_html} from "./i18n";
+import * as loading from "./loading";
 import * as message_edit from "./message_edit";
 import * as message_lists from "./message_lists";
 import * as popover_menus from "./popover_menus";
@@ -29,6 +30,7 @@ import * as ui_report from "./ui_report";
 import * as ui_util from "./ui_util";
 import * as unread_ops from "./unread_ops";
 import * as util from "./util";
+
 // In this module, we manage stream popovers
 // that pop up from the left sidebar.
 let stream_popover_instance = null;
@@ -475,7 +477,7 @@ export async function build_move_topic_to_stream_popover(
                 );
             },
             (xhr) => {
-                dialog_widget.hide_dialog_spinner();
+                loading.hide_spinner($("#dialog_widget_modal"));
                 ui_report.error(
                     $t_html({defaultMessage: "Error moving topic"}),
                     xhr,

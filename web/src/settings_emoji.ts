@@ -231,7 +231,7 @@ function show_modal(): void {
                 },
                 error(xhr) {
                     $("#dialog_error").hide();
-                    dialog_widget.hide_dialog_spinner();
+                    loading.hide_spinner($("#dialog_widget_modal"));
                     ui_report.error($t_html({defaultMessage: "Failed"}), xhr, $emoji_status);
                 },
             });
@@ -246,7 +246,7 @@ function show_modal(): void {
                 $t_html({defaultMessage: "Failed: Emoji name is required."}),
                 $emoji_status,
             );
-            dialog_widget.hide_dialog_spinner();
+            loading.hide_spinner($("#dialog_widget_modal"));
             return;
         }
 
@@ -257,7 +257,7 @@ function show_modal(): void {
                 }),
                 $emoji_status,
             );
-            dialog_widget.hide_dialog_spinner();
+            loading.hide_spinner($("#dialog_widget_modal"));
             return;
         }
 
@@ -277,7 +277,7 @@ function show_modal(): void {
                     }),
                     $emoji_status,
                 );
-                dialog_widget.hide_dialog_spinner();
+                loading.hide_spinner($("#dialog_widget_modal"));
                 return;
             }
 

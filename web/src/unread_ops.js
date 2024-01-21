@@ -161,7 +161,7 @@ function bulk_mark_messages_as_read(narrow, args = {}) {
                     body: xhr.responseText,
                 });
             }
-            dialog_widget.hide_dialog_spinner();
+            loading.hide_spinner($("#dialog_widget_modal"));
         },
     });
 }

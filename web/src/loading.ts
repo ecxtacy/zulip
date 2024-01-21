@@ -92,3 +92,10 @@ export function show_button_spinner($elt: JQuery, using_dark_theme: boolean): vo
     }
     $elt.css("display", "inline-block");
 }
+
+export function hide_spinner($button: JQuery): void {
+    const $spinner = $button.find(".modal__spinner");
+    $button.prop("disabled", false);
+    $button.find("span").show();
+    destroy_indicator($spinner);
+}
