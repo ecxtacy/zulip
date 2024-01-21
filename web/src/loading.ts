@@ -99,3 +99,15 @@ export function hide_spinner($button: JQuery): void {
     $button.find("span").show();
     destroy_indicator($spinner);
 }
+
+export function show_spinner($button: JQuery): void {
+    const $spinner = $button.find(".modal__spinner");
+    const dialog_submit_button_span_width = $button.find("span").width();
+    const dialog_submit_button_span_height = $button.find("span").height();
+    $button.prop("disabled", true);
+    $button.find("span").hide();
+    make_indicator($spinner, {
+        width: dialog_submit_button_span_width,
+        height: dialog_submit_button_span_height,
+    });
+}

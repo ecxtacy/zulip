@@ -537,7 +537,7 @@ export function show_edit_bot_info_modal(user_id, $container) {
 
         const $submit_btn = $("#user-profile-modal .dialog_submit_button");
         const $cancel_btn = $("#user-profile-modal .dialog_exit_button");
-        show_button_spinner($submit_btn);
+        loading.show_spinner($submit_btn);
         $cancel_btn.prop("disabled", true);
 
         channel.patch({
@@ -783,7 +783,7 @@ export function show_edit_user_info_modal(user_id, $container) {
 
         const $submit_btn = $("#user-profile-modal .dialog_submit_button");
         const $cancel_btn = $("#user-profile-modal .dialog_exit_button");
-        show_button_spinner($submit_btn);
+        loading.show_spinner($submit_btn);
         $cancel_btn.prop("disabled", true);
 
         channel.patch({

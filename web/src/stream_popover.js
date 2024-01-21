@@ -462,7 +462,7 @@ export async function build_move_topic_to_stream_popover(
             return;
         }
 
-        dialog_widget.show_dialog_spinner();
+        loading.show_spinner($("#dialog_widget_modal"));
         message_edit.with_first_message_id(
             current_stream_id,
             old_topic_name,
